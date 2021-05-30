@@ -47,29 +47,15 @@ const Main = (props) => {
         <Label htmlFor="roomName">Select CLASS Room Name</Label>
         </Row>
         <Row>
-        I-CSE-A<Input type="radio" value="ICSEA" name="roomName" id="roomName" ref={roomRef} />
-        I-CSE-B<Input type="radio" value="ICSEB" name="roomName" id="roomName" ref={roomRef} />
-        I-CSE-C<Input type="radio" value="ICSEC" name="roomName" id="roomName" ref={roomRef} />
-        I-CSE-D<Input type="radio" value="ICSED" name="roomName" id="roomName" ref={roomRef} />
-
+        <select name="roomName" id="roomName" ref={roomRef}>
+        <option value="">Select your class room</option>
+        <option value="ICSEA">ICSEA</option>
+        <option value="ICSEB">ICSEB</option>
+        <option value="ICSEC">ICSEC</option>
+        <option value="ICSED">ICSED</option>
+        </select>
         
-      </Row>
-      <Row>
-        II-CSE-A<Input type="radio" value="IICSEA" name="roomName" id="roomName" ref={roomRef} />
-        II-CSE-B<Input type="radio" value="IICSEB" name="roomName" id="roomName" ref={roomRef} />
-        II-CSE-C<Input type="radio" value="IICSEC" name="roomName" id="roomName" ref={roomRef} />
-        II-CSE-D<Input type="radio" value="IICSED" name="roomName" id="roomName" ref={roomRef} />
-
-        
-      </Row>
-      <Row>
-        III-CSE-A<Input type="radio" value="IIICSEA" name="roomName" id="roomName" ref={roomRef} />
-        III-CSE-B<Input type="radio" value="IIICSEB" name="roomName" id="roomName" ref={roomRef} />
-        III-CSE-C<Input type="radio" value="IIICSEC" name="roomName" id="roomName" ref={roomRef} />
-        III-CSE-D<Input type="radio" value="IIICSED" name="roomName" id="roomName" ref={roomRef} />
-
-        
-      </Row>
+         </Row>
       
       <JoinButton onClick={clickJoin}> Join </JoinButton>
       {err ? <Error>{errMsg}</Error> : null}
@@ -91,6 +77,7 @@ const Row = styled.div`
 `;
 
 const Label = styled.label``;
+const select = styled.select`width: 200px;height: 30px`;
 
 const Input = styled.input`
   width: 200px;
@@ -101,6 +88,7 @@ const Input = styled.input`
   border: none;
   border-radius: 5px;
 `;
+
 
 const Error = styled.div`
   margin-top: 10px;
